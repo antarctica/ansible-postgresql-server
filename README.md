@@ -44,6 +44,10 @@ Note: This role is for internal use only.
  
 ## Changelog
 
+### 0.1.1 - September 2014
+
+* Correcting name of task file
+
 ### 0.1.0 - September 2014
 
 * Initial version
