@@ -1,17 +1,20 @@
 ---
 galaxy_info:
-  author: British Antarctic Survey
-  description: Installs PostgreSQL database server and optional 'app' db
-  version: 0.1.0
+  description: Installs PostgreSQL database server and optionally creates an 'app' db
+  author: British Antarctic Survey - Web and Applications Team
   company: British Antarctic Survey
   license: Open Government Licence V2
   min_ansible_version: 1.6
   platforms:
   - name: Ubuntu
       - trusty
+
+armadillo_info:
+  name: PostgreSQL Server
+  version: 0.1.0
+  source: git@stash.ceh.ac.uk:7999/barc/postgresql-server.git
   dependencies:
-  - name: core
-      - v0.3.0
+  - git@stash.ceh.ac.uk:7999/barc/core.git#v0.3.2
 
 dependencies:
-  - { role: core }
+  - core

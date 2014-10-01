@@ -1,17 +1,7 @@
 ---
 # Default variables - inventory or playbook overrides will be respected
 
-postgres_controller_password: "stirring-up^the*flames//381194//iz/JQ4"
-postgres_app_password: "chase-PaX-87524"
+postgresql_server_controller_user_password: "stirring-up^the*flames//381194//iz/JQ4"
+postgresql_server_app_user_password: "chase-PaX-87524"
 
-postgres_create_app_db: true
-
-#postgress_bind_address: "{{ ansible_eth1.ipv4.address }}"
-
-# Allowed hosts
-#root_hosts:
-#  - 127.0.0.1
-#  - localhost  # needs to be the last item for idempotency, see http://ansible.cc/docs/modules.html#mysql-user
-#app_hosts:
-#  - 127.0.0.1
-#  - localhost  # needs to be the last item for idempotency, see http://ansible.cc/docs/modules.html#mysql-user
+postgresql_server_create_app_db: true
