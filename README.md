@@ -1,5 +1,7 @@
 # PostgreSQL Server (`postgresql-server`)
 
+**Part of the BAS Ansible Role Collection (BARC)**
+
 Installs PostgreSQL database server and optionally creates an 'app' db
 
 ## Overview
