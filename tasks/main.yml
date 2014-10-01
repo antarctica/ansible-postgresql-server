@@ -20,7 +20,7 @@
 - name: force handlers to run now
   meta: flush_handlers
 
-- include: app-controller.yml
+- include: controller-user.yml
 - include: app-user.yml
 
 - include: app-db.yml
