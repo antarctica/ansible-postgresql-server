@@ -16,7 +16,7 @@ Contact: [basweb@bas.ac.uk](mailto:basweb@bas.ac.uk).
 
 ## Availability
 
-Note: This role is for internal use only.
+This role is designed for internal use but if useful can be shared publicly.
 
 ## License
 
@@ -43,6 +43,10 @@ Note: This role is for internal use only.
     * Default: "true"
  
 ## Changelog
+
+### 0.1.2 - September 2014
+
+* Correcting README
 
 ### 0.1.1 - September 2014
 
