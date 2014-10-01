@@ -1,0 +1,17 @@
+---
+galaxy_info:
+  author: British Antarctic Survey
+  description: Installs PostgreSQL database server and optional 'app' db
+  version: 0.1.0
+  company: British Antarctic Survey
+  license: Open Government Licence V2
+  min_ansible_version: 1.6
+  platforms:
+  - name: Ubuntu
+      - trusty
+  dependencies:
+  - name: core
+      - v0.3.0
+
+dependencies:
+  - { role: core }

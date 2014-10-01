@@ -1,0 +1,8 @@
+---
+
+- name: create pqsl history file for app OS user
+  file: path=/home/app/.psql_history owner=app group=app state=touch
+
+- name: create app user in postgres
+  postgresql_user: name=app password="{{ postgres_app_password }}" state=present
+  sudo_user: postgres

@@ -1,0 +1,32 @@
+---
+# Install & Configure PostgreSQL server
+
+- name: install postgresql
+  apt: update_cache=yes cache_valid_time=3600 pkg={{ item }} state=present # won't update if done under an hour ago
+  with_items:
+  - postgresql
+  - postgresql-contrib
+  - python-psycopg2 # required for ansible to interface with database
+
+- name: create pqsl history file for postgres user
+  file: path=/var/lib/postgresql/.psql_history owner=postgres group=postgres state=touch
+- name: create pqsl history file for controller user
+  file: path=/home/controller/.psql_history owner=controller group=controller state=touch
+
+
+- name: configure pg_hba.conf
+  template: src=etc/postgresql/9.3/main/pg_hba.conf.j2 dest=/etc/postgresql/9.3/main/pg_hba.conf owner=postgres group=postgres mode=640
+  notify:
+    - Restart PostgreSQL
+- name: force handlers to run now
+  meta: flush_handlers
+
+- name: create controller user in postgres
+  postgresql_user: name=controller password="{{ postgres_controller_password }}" role_attr_flags=SUPERUSER,CREATEROLE,CREATEDB,REPLICATION state=present
+  sudo_user: postgres
+
+
+- include: app-user.yml
+
+- include: app-db.yml
+  when: postgres_create_app_db == true
