@@ -4,4 +4,4 @@
 postgresql_server_controller_user_password: "stirring-up^the*flames//381194//iz/JQ4"
 postgresql_server_app_user_password: "chase-PaX-87524"
 
-postgresql_server_create_app_db: true
+postgresql_server_create_app_db: false

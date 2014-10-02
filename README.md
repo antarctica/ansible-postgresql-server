@@ -42,9 +42,13 @@ This role is designed for internal use but if useful can be shared publicly.
 
 * `postgres_create_app_db`
     * If "true" a database named "app" will be created and assigned to the "app" postgres database user. 
-    * Default: "true"
+    * Default: "false"
  
 ## Changelog
+
+### 0.1.3 - October 2014
+
+* Role should not create an 'app' database by default, now corrected 
 
 ### 0.1.2 - September 2014
 
