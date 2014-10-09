@@ -41,14 +41,18 @@ This role is designed for internal use but if useful can be shared publicly.
     * Default: "chase-PaX-87524"
 
 * `postgres_create_app_db`
-    * If "true" a database named "app" will be created and assigned to the "app" postgres database user. 
+    * If "true" a database named "app" will be created and assigned to the "app" postgres database user.
     * Default: "false"
- 
+
 ## Changelog
+
+### 0.1.4 - October 2014
+
+* Updating default controller user password to be compatible with the .pgpass file format
 
 ### 0.1.3 - October 2014
 
-* Role should not create an 'app' database by default, now corrected 
+* Role should not create an 'app' database by default, now corrected
 
 ### 0.1.2 - September 2014
 
