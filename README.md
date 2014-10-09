@@ -32,21 +32,25 @@ This role is designed for internal use but if useful can be shared publicly.
 
 ## Variables
 
-* `postgres_controller_password`
+* `postgresql_server_controller_user_password`
     * Default password for controller user (i.e. root).
     * MUST NOT contain ":" or "\" characters to ensure compatibility with `.pgpass` files
     * Default: "stirring-up^the=flames$381194££iz€JQ4"
 
-* `postgres_app_password`
+* `postgresql_server_app_user_password`
     * Default password for app user.
     * MUST NOT contain ":" or "\" characters to ensure compatibility with `.pgpass` files.
     * Default: "chase-PaX-87524"
 
-* `postgres_create_app_db`
+* `postgresql_server_create_app_db`
     * If "true" a database named "app" will be created and assigned to the "app" postgres database user.
     * Default: "false"
 
 ## Changelog
+
+### 0.1.5 - October 2014
+
+* Documentation update to fix outdated variable name references
 
 ### 0.1.4 - October 2014
 
