@@ -35,7 +35,7 @@ This role is designed for internal use but if useful can be shared publicly.
 * `postgres_controller_password`
     * Default password for controller user (i.e. root).
     * MUST NOT contain ":" or "\" characters to ensure compatibility with `.pgpass` files
-    * Default: "stirring-up^the*flames//381194//iz/JQ4"
+    * Default: "stirring-up^the=flames$381194££iz€JQ4"
 
 * `postgres_app_password`
     * Default password for app user.
