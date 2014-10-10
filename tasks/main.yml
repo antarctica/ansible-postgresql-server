@@ -10,8 +10,6 @@
 
 - name: create pqsl history file for postgres user
   file: path=/var/lib/postgresql/.psql_history owner=postgres group=postgres state=touch
-- name: create pqsl history file for controller user
-  file: path=/home/controller/.psql_history owner=controller group=controller state=touch
 
 - name: configure pg_hba.conf
   template: src=etc/postgresql/9.3/main/pg_hba.conf.j2 dest=/etc/postgresql/9.3/main/pg_hba.conf owner=postgres group=postgres mode=640

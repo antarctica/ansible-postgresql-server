@@ -48,6 +48,11 @@ This role is designed for internal use but if useful can be shared publicly.
 
 ## Changelog
 
+### 0.1.6 - October 2014
+
+* Adding missing Ansible managed header to `pg_hba.conf` template
+* Refactoring tasks
+
 ### 0.1.5 - October 2014
 
 * Documentation update to fix outdated variable name references
