@@ -48,10 +48,6 @@ This role is designed for internal use but if useful can be shared publicly.
 
 ## Changelog
 
-### 0.1.7 - October 2014
-
-* Adding missing state attribute for creating app database if desired
-
 ### 0.1.6 - October 2014
 
 * Adding missing Ansible managed header to `pg_hba.conf` template
