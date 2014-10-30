@@ -48,6 +48,10 @@ This role is designed for internal use but if useful can be shared publicly.
 
 ## Changelog
 
+### 0.1.8 - October 2014
+
+* Updating dependencies
+
 ### 0.1.7 - October 2014
 
 * Adding missing state attribute for creating app database if desired
