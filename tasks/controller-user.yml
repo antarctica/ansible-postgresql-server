@@ -2,8 +2,8 @@
 # Configure PostgreSQL account for controller user
 
 - name: create pqsl history file for controller user
-  file: path=/home/controller/.psql_history owner=controller group=controller state=touch
+  file: path="/home/{{ postgresql_server_controller_user_username }}/.psql_history" owner="{{ postgresql_server_controller_user_username }}" group="{{ postgresql_server_controller_user_username }}" state=touch
 
-- name: create postgresql user account for controller
-  postgresql_user: name=controller password="{{ postgresql_server_controller_user_password }}" role_attr_flags=SUPERUSER,CREATEROLE,CREATEDB,REPLICATION state=present
+- name: create postgresql user account for controller user
+  postgresql_user: name="{{ postgresql_server_controller_postgresql_user_username }}" password="{{ postgresql_server_controller_postgresql_user_password }}" role_attr_flags=SUPERUSER,CREATEROLE,CREATEDB,REPLICATION state=present
   sudo_user: postgres

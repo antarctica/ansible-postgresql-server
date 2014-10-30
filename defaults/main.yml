@@ -1,7 +1,18 @@
 ---
 # Default variables - inventory or playbook overrides will be respected
 
-postgresql_server_controller_user_password: "stirring-up^the=flames$381194££iz€JQ4"
-postgresql_server_app_user_password: "chase-PaX-87524"
+# OS Users
+postgresql_server_controller_user_username: controller
+postgresql_server_app_user_username: controller
 
+# PostgreSQL Users
+postgresql_server_controller_postgresql_user_enabled: true
+postgresql_server_controller_postgresql_user_username: controller
+postgresql_server_controller_postgresql_user_password: "stirring-up^the=flames$381194££iz€JQ4"
+
+postgresql_server_app_postgresql_user_enabled: true
+postgresql_server_app_postgresql_user_username: app
+postgresql_server_app_postgresql_user_password: "chase-PaX-87524"
+
+# PostgreSQL Databases
 postgresql_server_create_app_db: false
