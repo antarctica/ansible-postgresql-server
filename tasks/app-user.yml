@@ -2,8 +2,8 @@
 # Configure PostgreSQL account for app user
 
 - name: create pqsl history file for app OS user
-  file: path=/home/app/.psql_history owner=app group=app state=touch
+  file: path="/home/{{ postgresql_server_app_user_username }}/.psql_history" owner="{{ postgresql_server_app_user_username }}" group="{{ postgresql_server_app_user_username }}" state=touch
 
 - name: create postgresql user account for app
-  postgresql_user: name=app password="{{ postgresql_server_app_user_password }}" state=present
+  postgresql_user: name="{{ postgresql_server_app_postgresql_user_username }}" password="{{ postgresql_server_app_postgresql_user_password }}" state=present
   sudo_user: postgres
