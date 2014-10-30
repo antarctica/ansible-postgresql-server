@@ -19,7 +19,10 @@
   meta: flush_handlers
 
 - include: controller-user.yml
+  when: postgresql_server_controller_postgresql_user_enabled == true
+
 - include: app-user.yml
+  when: postgresql_server_app_postgresql_user_enabled == true
 
 - include: app-db.yml
   when: postgresql_server_create_app_db == true

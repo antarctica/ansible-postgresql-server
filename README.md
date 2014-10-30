@@ -32,13 +32,34 @@ This role is designed for internal use but if useful can be shared publicly.
 
 ## Variables
 
-* `postgresql_server_controller_user_password`
-    * Default password for controller user (i.e. root).
+* `postgresql_server_controller_user_username`
+    * The username of the controller OS user, used for system tasks, if enabled
+    * This variable must be a valid OS user
+    * Default: "controller"
+* `postgresql_server_app_user_username`
+    * The username of the app OS user, used for day to day tasks, if enabled
+    * This variable must be a valid OS user
+    * Default: "app"
+* `postgresql_server_controller_postgresql_user_enabled`
+    * If "true" a user for database server management tasks, termed a controller user, will be created with root privileges.
+    * Default: true
+* `postgresql_server_controller_mysql_user_username`
+    * The username of the controller PostgreSQL user, used for managing the database server, if enabled
+    * This variable must be a valid PostgreSQL user
+    * Default: "controller"
+* `postgresql_server_controller_postgresql_user_password`
+    * Password for PostgreSQL controller user.
     * MUST NOT contain ":" or "\" characters to ensure compatibility with `.pgpass` files
     * Default: "stirring-up^the=flames$381194££iz€JQ4"
-
-* `postgresql_server_app_user_password`
-    * Default password for app user.
+* `postgresql_server_app_postgresql_user_enabled`
+    * If "true" a user for day to day database tasks, termed an app user, will be created with no initial privileges.
+    * Default: true
+* `postgresql_server_app_mysql_user_username`
+    * The username of the app PostgreSQL user, used for day to day database tasks, if enable
+    * This variable must be a valid PostgreSQL user
+    * Default: "app"
+* `postgresql_server_app_postgresql_user_password`
+    * Password for PostgreSQL app user.
     * MUST NOT contain ":" or "\" characters to ensure compatibility with `.pgpass` files.
     * Default: "chase-PaX-87524"
 
@@ -51,6 +72,7 @@ This role is designed for internal use but if useful can be shared publicly.
 ### 0.1.8 - October 2014
 
 * Updating dependencies
+* App and controller users are now optional, enabled by default, their usernames are now set using variables
 
 ### 0.1.7 - October 2014
 
