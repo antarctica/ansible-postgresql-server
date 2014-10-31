@@ -3,7 +3,7 @@
 
 # OS Users
 postgresql_server_controller_user_username: controller
-postgresql_server_app_user_username: controller
+postgresql_server_app_user_username: app
 
 # PostgreSQL Users
 postgresql_server_controller_postgresql_user_enabled: true
