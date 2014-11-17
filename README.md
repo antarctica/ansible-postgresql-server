@@ -94,6 +94,10 @@ These roles are used for internal projects which may dictate whether any contrib
 
 ## Changelog
 
+### 0.1.10- November 2014
+
+* Fixing incorrect variable value
+
 ### 0.1.9- October 2014
 
 * Fixing incorrect variable value
