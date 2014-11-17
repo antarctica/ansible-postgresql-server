@@ -1,5 +1,5 @@
 ---
-# Optionally create default 'app' database asigned to the app user
+# Optionally create default 'app' database assigned to the app user
 
 - name: Create app database
-  postgresql_db: login_user=controller login_password="{{ postgresql_server_controller_user_password }}" name=app owner=app encoding='UTF-8' lc_collate='en_GB.UTF-8' lc_ctype='en_GB.UTF-8' template='template0' state=present
+  postgresql_db: login_user=controller login_password="{{ postgresql_server_controller_postgresql_user_password }}" name=app owner=app encoding='UTF-8' lc_collate='en_GB.UTF-8' lc_ctype='en_GB.UTF-8' template='template0' state=present
