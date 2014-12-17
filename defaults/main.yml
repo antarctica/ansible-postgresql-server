@@ -16,3 +16,4 @@ postgresql_server_app_postgresql_user_password: "chase-PaX-87524"
 
 # PostgreSQL Databases
 postgresql_server_create_app_db: false
+postgresql_server_app_db_owner: "{{ postgresql_server_app_postgresql_user_username }}"
