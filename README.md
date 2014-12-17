@@ -58,6 +58,10 @@ This role is designed for internal use but if useful can be shared publicly.
 * `postgresql_server_create_app_db`
     * If "true" a database named "app" will be created and assigned to the "app" postgres database user.
     * Default: "false"
+* `postgresql_server_app_db_owner`
+    * The postgresql user with ownership over the 'app' database
+    * This variable must be a valid PostgreSQL user
+    * Default: "{{ postgresql_server_app_postgresql_user_username }}"
 
 ## Contributing
 
