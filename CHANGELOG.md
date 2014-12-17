@@ -1,5 +1,10 @@
 # PostgreSQL Server (`postgresql-server`) - Changelog
 
+## 0.1.12 - December 2014
+
+* Allowing owner and name of app db to be configurable
+* Added missing OS package requirement
+
 ## 0.1.11 - December 2014
 
 * Preparing role for public release

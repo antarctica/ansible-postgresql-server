@@ -35,9 +35,9 @@ This role is designed for internal use but if useful can be shared publicly.
 * `postgresql_server_controller_postgresql_user_enabled`
     * If "true" a user for database server management tasks, termed a controller user, will be created with root privileges.
     * Default: true
-* `postgresql_server_controller_mysql_user_username`
+* `postgresql_server_controller_postgresql_user_username`
     * The username of the controller PostgreSQL user, used for managing the database server, if enabled
-    * This variable must be a valid PostgreSQL user
+    * This variable must be a valid PostgreSQL username
     * Default: "controller"
 * `postgresql_server_controller_postgresql_user_password`
     * Password for PostgreSQL controller user.
@@ -46,18 +46,25 @@ This role is designed for internal use but if useful can be shared publicly.
 * `postgresql_server_app_postgresql_user_enabled`
     * If "true" a user for day to day database tasks, termed an app user, will be created with no initial privileges.
     * Default: true
-* `postgresql_server_app_mysql_user_username`
+* `postgresql_server_app_postgresql_user_username`
     * The username of the app PostgreSQL user, used for day to day database tasks, if enable
-    * This variable must be a valid PostgreSQL user
+    * This variable must be a valid PostgreSQL username
     * Default: "app"
 * `postgresql_server_app_postgresql_user_password`
     * Password for PostgreSQL app user.
-    * MUST NOT contain ":" or "\" characters to ensure compatibility with `.pgpass` files.
+    * MUST NOT contain ":" or "\" characters to ensure compatibility with `.pgpass` files
     * Default: "chase-PaX-87524"
-
 * `postgresql_server_create_app_db`
-    * If "true" a database named "app" will be created and assigned to the "app" postgres database user.
+    * If "true" an 'app' database will be created for your convenience
     * Default: "false"
+* `postgresql_server_app_db_name`
+    * The name of the 'app' database
+    * This variable must be a valid PostgreSQL database name
+    * Default: "app"
+* `postgresql_server_app_db_owner`
+    * The postgresql user with ownership over the 'app' database
+    * This variable must be a valid PostgreSQL user
+    * Default: "{{ postgresql_server_app_postgresql_user_username }}"
 
 ## Contributing
 
