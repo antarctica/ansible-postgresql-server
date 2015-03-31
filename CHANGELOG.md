@@ -1,5 +1,9 @@
 # PostgreSQL Server (`postgresql-server`) - Changelog
 
+## 0.1.13 - March 2015
+
+* Fixing tasks to prevent unnecessary change reporting
+
 ## 0.1.12 - December 2014
 
 * Allowing owner and name of app db to be configurable
