@@ -9,8 +9,7 @@
   - libpq-dev
   - python-psycopg2 # required for ansible to interface with database
 
-- name: create pqsl history file for postgres user
-  file: path=/var/lib/postgresql/.psql_history owner=postgres group=postgres state=touch
+- include: postgres-user.yml
 
 - name: configure pg_hba.conf
   template: src=etc/postgresql/9.3/main/pg_hba.conf.j2 dest=/etc/postgresql/9.3/main/pg_hba.conf owner=postgres group=postgres mode=640
