@@ -1,8 +1,13 @@
 ---
 # Configure PostgreSQL account for controller user
 
-- name: create pqsl history file for controller user
+- name: determine if history file exists for controller user
+  stat: path="/home/{{ postgresql_server_controller_user_username }}/.psql_history"
+  register: postgresql_server_fact_controller_user_history_file_exist
+
+- name: ensure history file exists for controller user
   file: path="/home/{{ postgresql_server_controller_user_username }}/.psql_history" owner="{{ postgresql_server_controller_user_username }}" group="{{ postgresql_server_controller_user_username }}" state=touch
+  when: postgresql_server_fact_controller_user_history_file_exist.stat.exists == false
 
 - name: create postgresql user account for controller user
   postgresql_user: name="{{ postgresql_server_controller_postgresql_user_username }}" password="{{ postgresql_server_controller_postgresql_user_password }}" role_attr_flags=SUPERUSER,CREATEROLE,CREATEDB,REPLICATION state=present

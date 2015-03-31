@@ -1,8 +1,13 @@
 ---
 # Configure PostgreSQL account for app user
 
-- name: create pqsl history file for app OS user
+- name: determine if history file exists for app user
+  stat: path="/home/{{ postgresql_server_app_user_username }}/.psql_history"
+  register: postgresql_server_fact_app_user_history_file_exist
+
+- name: ensure history file exists for app user
   file: path="/home/{{ postgresql_server_app_user_username }}/.psql_history" owner="{{ postgresql_server_app_user_username }}" group="{{ postgresql_server_app_user_username }}" state=touch
+  when: postgresql_server_fact_app_user_history_file_exist.stat.exists == false
 
 - name: create postgresql user account for app
   postgresql_user: name="{{ postgresql_server_app_postgresql_user_username }}" password="{{ postgresql_server_app_postgresql_user_password }}" state=present

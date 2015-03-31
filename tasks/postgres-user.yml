@@ -1,0 +1,9 @@
+---
+
+- name: determine if history file exists for postgres user
+  stat: path="/var/lib/postgresql/.psql_history"
+  register: postgresql_server_fact_postgres_user_history_file_exist
+
+- name: ensure history file exists for controller user
+  file: path="/var/lib/postgresql/.psql_history" owner=postgres group=postgres state=touch
+  when: postgresql_server_fact_postgres_user_history_file_exist.stat.exists == false
