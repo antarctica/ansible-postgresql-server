@@ -15,6 +15,7 @@
   template: src=etc/postgresql/9.3/main/pg_hba.conf.j2 dest=/etc/postgresql/9.3/main/pg_hba.conf owner=postgres group=postgres mode=640
   notify:
     - Restart PostgreSQL
+
 - name: force handlers to run now
   meta: flush_handlers
 
