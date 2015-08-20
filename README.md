@@ -42,7 +42,7 @@ This role is designed for internal use but if useful can be shared publicly.
 * `postgresql_server_controller_postgresql_user_password`
     * Password for PostgreSQL controller user.
     * MUST NOT contain ":" or "\" characters to ensure compatibility with `.pgpass` files
-    * Default: "stirring-up^the=flames$381194££iz€JQ4"
+    * Default: "password"
 * `postgresql_server_app_postgresql_user_enabled`
     * If "true" a user for day to day database tasks, termed an app user, will be created with no initial privileges.
     * Default: true
@@ -53,7 +53,7 @@ This role is designed for internal use but if useful can be shared publicly.
 * `postgresql_server_app_postgresql_user_password`
     * Password for PostgreSQL app user.
     * MUST NOT contain ":" or "\" characters to ensure compatibility with `.pgpass` files
-    * Default: "chase-PaX-87524"
+    * Default: "password"
 * `postgresql_server_create_app_db`
     * If "true" an 'app' database will be created for your convenience
     * Default: "false"
