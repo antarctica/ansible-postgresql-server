@@ -6,8 +6,8 @@ Installs PostgreSQL database server and optionally creates an 'app' db
 
 ## Overview
 
-* Installs main and contrib PostgreSQL packages with python bindings required by ansible.
-* Configures accounts for local users (controller and app) with superadmin and no permissions respectively.
+* Installs *main* and *contrib* PostgreSQL packages with python bindings required by Ansible.
+* Configures accounts for local users (controller and app) with super-admin and no permissions respectively.
 * Optionally this role can create an 'app' database assigned to the app PostgreSQL user.
 
 ## Availability
@@ -25,45 +25,48 @@ This role is designed for internal use but if useful can be shared publicly.
 ### Variables
 
 * `postgresql_server_controller_user_username`
-    * The username of the controller OS user, used for system tasks, if enabled
-    * This variable must be a valid OS user
+    * The username of a controller user, used for system tasks, if enabled
+    * This variable **MUST** be a valid UNIX username
     * Default: "controller"
 * `postgresql_server_app_user_username`
-    * The username of the app OS user, used for day to day tasks, if enabled
-    * This variable must be a valid OS user
+    * The username of an app user, used for day to day tasks, if enabled
+    * This variable **MUST** be a valid UNIX username
     * Default: "app"
 * `postgresql_server_controller_postgresql_user_enabled`
     * If "true" a user for database server management tasks, termed a controller user, will be created with root privileges.
-    * Default: true
+    * This is a binary variable and **MUST** be set to either "true" or "false" (without quotes).
+    * Default: "true"
 * `postgresql_server_controller_postgresql_user_username`
     * The username of the controller PostgreSQL user, used for managing the database server, if enabled
-    * This variable must be a valid PostgreSQL username
+    * This variable **MUST** be a valid PostgreSQL username
     * Default: "controller"
 * `postgresql_server_controller_postgresql_user_password`
     * Password for PostgreSQL controller user.
-    * MUST NOT contain ":" or "\" characters to ensure compatibility with `.pgpass` files
+    * This **MUST NOT*** contain ":" or "\" characters to ensure compatibility with `.pgpass` files
     * Default: "password"
 * `postgresql_server_app_postgresql_user_enabled`
     * If "true" a user for day to day database tasks, termed an app user, will be created with no initial privileges.
-    * Default: true
+    * This is a binary variable and **MUST** be set to either "true" or "false" (without quotes).
+    * Default: "true"
 * `postgresql_server_app_postgresql_user_username`
     * The username of the app PostgreSQL user, used for day to day database tasks, if enable
-    * This variable must be a valid PostgreSQL username
+    * This variable **MUST** be a valid PostgreSQL username
     * Default: "app"
 * `postgresql_server_app_postgresql_user_password`
     * Password for PostgreSQL app user.
-    * MUST NOT contain ":" or "\" characters to ensure compatibility with `.pgpass` files
+    * This **MUST NOT** contain ":" or "\" characters to ensure compatibility with `.pgpass` files
     * Default: "password"
 * `postgresql_server_create_app_db`
-    * If "true" an 'app' database will be created for your convenience
+    * If "true", an 'app' database will be created for your convenience
+    * This is a binary variable and **MUST** be set to either "true" or "false" (without quotes).
     * Default: "false"
 * `postgresql_server_app_db_name`
     * The name of the 'app' database
-    * This variable must be a valid PostgreSQL database name
+    * This variable **MUST** be a valid PostgreSQL database name.
     * Default: "app"
 * `postgresql_server_app_db_owner`
-    * The postgresql user with ownership over the 'app' database
-    * This variable must be a valid PostgreSQL user
+    * The PostgreSQL user with ownership over the 'app' database, if enabled
+    * This variable **MUST** be a valid PostgreSQL user
     * Default: "{{ postgresql_server_app_postgresql_user_username }}"
 
 ## Contributing

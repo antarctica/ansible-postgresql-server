@@ -1,6 +1,7 @@
 # PostgreSQL Server (`postgresql-server`) - Changelog
 
 * Updating default password variables for consistency to highlight they should be changed
+* Tidying up README
 ## 0.1.13 - March 2015
 
 * Fixing tasks to prevent unnecessary change reporting
